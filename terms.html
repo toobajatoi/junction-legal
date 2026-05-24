@@ -3,26 +3,318 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0A0A0A" />
+  <meta name="description" content="Terms of Service for Junction — the UX flow puzzle game." />
   <title>Terms of Service — Junction</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="assets/icon.png" type="image/png" />
   <style>
-    body { font-family: system-ui, -apple-system, sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 1.25rem 3rem; line-height: 1.65; color: #1a1a1a; background: #fafafa; }
-    h1 { font-size: 1.75rem; letter-spacing: -0.02em; }
-    h2 { font-size: 1.15rem; margin-top: 1.75rem; color: #111; }
-    a { color: #2563eb; }
-    code { background: #eee; padding: 0.1em 0.35em; border-radius: 4px; font-size: 0.9em; }
-    ul { padding-left: 1.25rem; }
-    hr { border: none; border-top: 1px solid #ddd; margin: 1.5rem 0; }
-    nav { margin-bottom: 1.5rem; font-size: 0.95rem; }
-    nav a { margin-right: 1rem; }
+    :root {
+      color-scheme: dark;
+      --bg0: #0A0A0A;
+      --bg1: #111111;
+      --surface: #141414;
+      --stroke: rgba(255,255,255,0.08);
+      --stroke-strong: rgba(255,255,255,0.14);
+      --text-hi: #FAFAFA;
+      --text-mid: #A3A3A3;
+      --text-lo: #737373;
+      --accent: #E08B6F;
+      --accent-alt: #F0A088;
+      --accent-glow: rgba(224,139,111,0.14);
+      --code-bg: rgba(255,255,255,0.06);
+    }
 
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--text-mid);
+      background: var(--bg0);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .ambient {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(224,139,111,0.08), transparent 55%),
+        radial-gradient(ellipse 60% 40% at 90% 10%, rgba(255,255,255,0.03), transparent 50%),
+        linear-gradient(180deg, var(--bg0) 0%, #0D0D0C 40%, var(--bg0) 100%);
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--text-hi);
+    }
+
+    .brand img {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.45);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .brand-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .brand-tag {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    nav.tabs {
+      display: flex;
+      gap: 0.35rem;
+      padding: 0.25rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--stroke);
+      border-radius: 999px;
+    }
+
+    nav.tabs a,
+    nav.tabs span {
+      display: inline-block;
+      padding: 0.45rem 0.9rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 999px;
+      color: var(--text-mid);
+      transition: color 0.15s, background 0.15s;
+    }
+
+    nav.tabs a:hover {
+      color: var(--text-hi);
+      background: rgba(255,255,255,0.05);
+    }
+
+    nav.tabs span.active {
+      color: var(--text-hi);
+      background: var(--accent-glow);
+      border: 1px solid rgba(224,139,111,0.35);
+    }
+
+    .hero {
+      margin-bottom: 1.75rem;
+    }
+
+    .hero h1 {
+      margin: 0 0 0.65rem;
+      font-size: clamp(1.75rem, 4vw, 2.15rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: var(--text-hi);
+    }
+
+    .hero .intro {
+      margin: 0 0 1.25rem;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      color: var(--text-mid);
+      max-width: 42rem;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+      font-size: 0.82rem;
+      color: var(--text-lo);
+    }
+
+    .meta-row span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .meta-row strong {
+      color: var(--text-mid);
+      font-weight: 600;
+    }
+
+    .meta-row a {
+      color: var(--accent-alt);
+      text-decoration: none;
+    }
+
+    .meta-row a:hover { text-decoration: underline; }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--stroke);
+      border-radius: 20px;
+      padding: 1.75rem 1.5rem 2rem;
+      box-shadow:
+        0 1px 0 rgba(255,255,255,0.04) inset,
+        0 24px 48px rgba(0,0,0,0.35);
+    }
+
+    @media (min-width: 640px) {
+      .card { padding: 2rem 2.25rem 2.5rem; }
+    }
+
+    .card h2 {
+      margin: 2rem 0 0.75rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--text-hi);
+    }
+
+    .card h2:first-child { margin-top: 0; }
+
+    .card h3 {
+      margin: 1.35rem 0 0.5rem;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--accent-alt);
+    }
+
+    .card p {
+      margin: 0 0 0.85rem;
+      color: var(--text-mid);
+    }
+
+    .card p:last-child { margin-bottom: 0; }
+
+    .card ul {
+      margin: 0 0 1rem;
+      padding-left: 1.2rem;
+      color: var(--text-mid);
+    }
+
+    .card li {
+      margin-bottom: 0.45rem;
+      padding-left: 0.15rem;
+    }
+
+    .card li::marker { color: var(--accent); }
+
+    .card hr {
+      border: none;
+      border-top: 1px solid var(--stroke);
+      margin: 1.75rem 0;
+    }
+
+    .card a {
+      color: var(--accent-alt);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(240,160,136,0.25);
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .card a:hover {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    .card strong { color: var(--text-hi); font-weight: 600; }
+
+    .card code {
+      font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+      font-size: 0.88em;
+      background: var(--code-bg);
+      border: 1px solid var(--stroke);
+      padding: 0.12em 0.4em;
+      border-radius: 6px;
+      color: var(--text-hi);
+    }
+
+    .site-footer {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--stroke);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      font-size: 0.82rem;
+      color: var(--text-lo);
+    }
+
+    .site-footer a {
+      color: var(--text-mid);
+      text-decoration: none;
+    }
+
+    .site-footer a:hover { color: var(--accent-alt); }
   </style>
 </head>
 <body>
-  <nav>
-      <a href="index.html">Privacy Policy</a>
-      <strong>Terms of Service</strong>
-  </nav>
-<h1>Terms of Service — Junction</h1>
+  <div class="ambient" aria-hidden="true"></div>
+  <div class="page">
+    <header class="site-header">
+      <a class="brand" href="index.html">
+        <img src="assets/icon.png" width="40" height="40" alt="Junction app icon" />
+        <div class="brand-text">
+          <span class="brand-name">Junction</span>
+          <span class="brand-tag">Legal</span>
+        </div>
+      </a>
+      <nav class="tabs" aria-label="Legal documents">
+        <a href="index.html">Privacy</a>
+        <span class="active">Terms</span>
+      </nav>
+    </header>
+
+    <header class="hero">
+      <h1>Terms of Service</h1>
+      <p class="intro">By downloading or using Junction, you agree to these Terms.</p>
+      <div class="meta-row">
+        <span><strong>Updated</strong> May 23, 2026</span>
+        <span><strong>App</strong> Junction (<code>com.junction.app</code>)</span>
+        <span><strong>Contact</strong> <a href="mailto:toobajatoi44@gmail.com">toobajatoi44@gmail.com</a></span>
+      </div>
+    </header>
+
+    <main class="card">
 <p><strong>Last updated:</strong> May 23, 2026  </p>
 <p><strong>App:</strong> Junction (<code>com.junction.app</code>)  </p>
 <p><strong>Contact:</strong> toobajatoi44@gmail.com</p>
@@ -69,5 +361,17 @@
 <h2>10. Contact</h2>
 <p><strong>toobajatoi44@gmail.com</strong></p>
 
+    </main>
+
+    <footer class="site-footer">
+      <span>© 2026 Junction</span>
+      <span>
+        <a href="index.html">Privacy</a>
+        ·
+        <a href="terms.html">Terms</a>
+         · <a href="mailto:toobajatoi44@gmail.com">toobajatoi44@gmail.com</a>
+      </span>
+    </footer>
+  </div>
 </body>
 </html>
