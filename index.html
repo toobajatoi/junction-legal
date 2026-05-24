@@ -266,6 +266,40 @@
       color: var(--text-hi);
     }
 
+    .table-wrap {
+      overflow-x: auto;
+      margin: 0 0 1.25rem;
+      border: 1px solid var(--stroke);
+      border-radius: 12px;
+    }
+
+    .card table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+
+    .card th,
+    .card td {
+      padding: 0.65rem 0.85rem;
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--stroke);
+    }
+
+    .card th {
+      background: rgba(255,255,255,0.04);
+      color: var(--text-hi);
+      font-weight: 600;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .card tr:last-child td { border-bottom: none; }
+
+    .card td { color: var(--text-mid); }
+
     .site-footer {
       margin-top: 2rem;
       padding-top: 1.5rem;
@@ -306,7 +340,7 @@
 
     <header class="hero">
       <h1>Privacy Policy</h1>
-      <p class="intro">Junction ("we", "our", "the app") is a UX flow puzzle game. This policy explains what information we collect and how we use it.</p>
+      <p class="intro"><strong>Developer / Data controller:</strong> Junction (operated by the developer listed below)   This Privacy Policy explains how Junction ("<strong>Junction</strong>", "<strong>we</strong>", "<strong>us</strong>", or "<strong>our</strong>") collects, uses, stores, shares, and protects information when you use the Junction mobile application and related services (collectively, the "<strong>Service</strong>"). Junction is a UX flow puzzle game. You design user journeys by connecting nodes, simulate flows, and may compete in timed and online modes. By using the Service, you acknowledge that you have read this Privacy Policy. If you do not agree with this Privacy Policy, please do not use the Service.</p>
       <div class="meta-row">
         <span><strong>Updated</strong> May 24, 2026</span>
         <span><strong>App</strong> Junction (<code>com.junction.app</code>)</span>
@@ -317,77 +351,244 @@
     <main class="card">
 <p><strong>Last updated:</strong> May 24, 2026  </p>
 <p><strong>App:</strong> Junction (<code>com.junction.app</code>)  </p>
+<p><strong>Developer / Data controller:</strong> Junction (operated by the developer listed below)  </p>
 <p><strong>Contact:</strong> toobajatoi44@gmail.com</p>
-<p>Junction ("we", "our", "the app") is a UX flow puzzle game. This policy explains what information we collect and how we use it.</p>
+<p>This Privacy Policy explains how Junction ("<strong>Junction</strong>", "<strong>we</strong>", "<strong>us</strong>", or "<strong>our</strong>") collects, uses, stores, shares, and protects information when you use the Junction mobile application and related services (collectively, the "<strong>Service</strong>").</p>
+<p>Junction is a UX flow puzzle game. You design user journeys by connecting nodes, simulate flows, and may compete in timed and online modes. By using the Service, you acknowledge that you have read this Privacy Policy.</p>
+<p>If you do not agree with this Privacy Policy, please do not use the Service.</p>
 <hr />
-<h2>Information we collect</h2>
-<h3>Account information</h3>
-<p>When you sign up or sign in, we may collect:</p>
+<h2>1. Who this policy applies to</h2>
+<p>This policy applies to:</p>
 <ul>
-<li>Email address (email sign-up or OAuth provider)</li>
-<li>Display name you choose in the app</li>
-<li>Authentication identifiers from Google or Apple Sign-In</li>
+<li>Users who create an account (email, Google, or Apple Sign-In)</li>
+<li>Users who play as a <strong>guest</strong> without signing in</li>
+<li>Users who purchase subscriptions or in-app products</li>
+<li>Users who participate in <strong>Online Blitz</strong> or other multiplayer features</li>
+<li>Visitors who contact us for support</li>
 </ul>
-<h3>Gameplay data</h3>
-<p>We store progress related to your account, including:</p>
+<p>This policy does <strong>not</strong> apply to third-party websites, apps, or services that we link to (for example, YouTube videos in Learn lessons, Figma templates, or app store billing pages). Those services have their own privacy policies.</p>
+<hr />
+<h2>2. Information we collect</h2>
+<p>We collect information in the categories below. Some information is <strong>required</strong> to provide core features (for example, account credentials). Other information is <strong>optional</strong> or collected only when you use specific features.</p>
+<h3>2.1 Account and identity information</h3>
+<p>When you register or sign in, we may collect:</p>
 <ul>
-<li>Levels completed and scores</li>
-<li>XP, coins, streaks, and preferences</li>
-<li>Online Blitz rating, wins, and losses (if you use online mode)</li>
-<li>Daily challenge progress</li>
+<li><strong>Email address</strong> — if you sign up with email/password or if your OAuth provider shares it</li>
+<li><strong>Authentication identifiers</strong> — Supabase user ID, OAuth subject IDs from Google or Apple</li>
+<li><strong>Display name</strong> — the username you choose during onboarding (must be at least 2 characters)</li>
+<li><strong>Profile metadata from OAuth</strong> — such as your name or profile picture URL if provided by Google or Apple (we primarily use the display name you set in Junction)</li>
+<li><strong>Password</strong> — if you use email sign-up, your password is handled by Supabase Auth; we do not store plain-text passwords on our servers</li>
 </ul>
-<h3>Purchases</h3>
-<p>If you buy subscriptions or in-app products:</p>
+<p>We do <strong>not</strong> require a real name. Your display name is shown to other players in Online Blitz matchmaking and results.</p>
+<h3>2.2 Onboarding and preference information</h3>
+<p>During first-time setup, you may provide:</p>
 <ul>
-<li>We receive <strong>entitlement status</strong> (what you unlocked) through <strong>RevenueCat</strong> and the app store (Google Play or Apple App Store)</li>
-<li>We do <strong>not</strong> collect or store your full payment card number — billing is handled by Google or Apple</li>
+<li><strong>Age range</strong> — selected from predefined brackets (used to tune difficulty; stored in local/cloud progress)</li>
+<li><strong>Experience level</strong> — for example Beginner, Intermediate, or Advanced</li>
+<li><strong>Interest tags</strong> — which game worlds you want to explore (e.g. ecommerce, fintech)</li>
 </ul>
-<h3>Device / technical data</h3>
+<p>This information is stored as part of your game progress profile.</p>
+<h3>2.3 Gameplay and progress data</h3>
+<p>We store gameplay data so you can resume where you left off and, if signed in, sync across devices. This includes:</p>
 <ul>
-<li>A guest device identifier (stored locally) if you play without an account</li>
-<li>Standard app logs and crash data from our hosting providers (if enabled)</li>
+<li><strong>Campaign progress</strong> — levels attempted, completed, best scores, stars, and unlock status</li>
+<li><strong>World and level identifiers</strong> — which puzzles you have played</li>
+<li><strong>Simulation results</strong> — scores across metrics such as simplicity, efficiency, conversion, recovery, trust, and accessibility</li>
+<li><strong>Daily challenge</strong> — date, completion status, and best score</li>
+<li><strong>Blitz mode stats</strong> — plays, clears, best score, best time, streaks, and coin balance</li>
+<li><strong>Vs Computer stats</strong> — wins, losses, and draws</li>
+<li><strong>Learn module progress</strong> — lesson quiz attempts, pass/fail status, best scores, and timestamps</li>
+<li><strong>XP, streaks, and virtual coins</strong> — in-game progression and rewards</li>
+<li><strong>Coin-unlocked levels</strong> — campaign levels unlocked early using in-game coins</li>
+<li><strong>Onboarding completion flag</strong> — whether you finished the in-app tutorial</li>
+<li><strong>Custom node labels</strong> — text you enter when adding custom nodes to a puzzle board (stored only as part of your local puzzle state unless shared via UX Audit export)</li>
 </ul>
-<p>We do <strong>not</strong> sell your personal information.</p>
-<hr />
-<h2>How we use information</h2>
-<p>We use your data to:</p>
+<p>Most gameplay data for signed-in users is stored in <strong>Supabase</strong> (<code>user_progress</code> table as JSON). Guest progress is stored <strong>locally on your device</strong> until you sign in and link your guest session.</p>
+<h3>2.4 Online Blitz and multiplayer data</h3>
+<p>If you use <strong>Online Blitz</strong>, we collect and process:</p>
 <ul>
-<li>Create and manage your account</li>
-<li>Save and sync game progress</li>
-<li>Match you with opponents in Online Blitz</li>
-<li>Unlock premium content you purchase</li>
-<li>Improve the app and fix bugs</li>
-<li>Respond to support requests</li>
+<li><strong>Matchmaking queue entry</strong> — your user ID and rating while waiting for an opponent</li>
+<li><strong>Match records</strong> — match ID, level ID, your score, completion time, opponent user ID, opponent score, opponent time, and match outcome</li>
+<li><strong>Online rating, wins, and losses</strong> — stored on your profile for skill-based matchmaking</li>
+<li><strong>Live board activity</strong> — during an active match, we temporarily sync your puzzle nodes, edges, build status, and connection count so your opponent can see your board update in real time. This data is tied to the match and your user ID.</li>
+<li><strong>Opponent display name and rating</strong> — shown to you during and after a match (we do not expose your email to opponents)</li>
 </ul>
-<hr />
-<h2>Third-party services</h2>
-<p>Junction uses:</p>
+<p>We may use <strong>bot opponents</strong> as a fallback when human matchmaking is unavailable. Bot matches still record scores and outcomes on your profile.</p>
+<h3>2.5 Purchase and entitlement data</h3>
+<p>When you buy a subscription or one-time in-app product:</p>
 <ul>
-<li><strong>Supabase</strong> — authentication, database, and backend APIs (<a href="https://supabase.com/privacy" rel="noopener noreferrer">supabase.com/privacy</a>)</li>
-<li><strong>RevenueCat</strong> — in-app purchase and subscription management (<a href="https://www.revenuecat.com/privacy" rel="noopener noreferrer">revenuecat.com/privacy</a>)</li>
-<li><strong>Google Play Billing</strong> — Android purchases (<a href="https://policies.google.com/privacy" rel="noopener noreferrer">policies.google.com/privacy</a>)</li>
-<li><strong>Apple In-App Purchase</strong> — iOS purchases (<a href="https://www.apple.com/legal/privacy" rel="noopener noreferrer">apple.com/legal/privacy</a>)</li>
-<li><strong>Google Sign-In</strong> — optional sign-in (<a href="https://policies.google.com/privacy" rel="noopener noreferrer">policies.google.com/privacy</a>)</li>
-<li><strong>Apple Sign-In</strong> — optional sign-in on iOS (<a href="https://www.apple.com/legal/privacy" rel="noopener noreferrer">apple.com/legal/privacy</a>)</li>
-<li><strong>Expo / EAS</strong> — app builds and updates (<a href="https://expo.dev/privacy" rel="noopener noreferrer">expo.dev/privacy</a>)</li>
+<li><strong>Apple App Store</strong> or <strong>Google Play</strong> processes payment. We do <strong>not</strong> receive your full card number, billing address, or bank details.</li>
+<li><strong>RevenueCat</strong> receives purchase receipts and subscription status from the app store and tells Junction which <strong>entitlements</strong> you own (for example UX Flow Pro, world unlocks, Learn pack, UX Audit).</li>
+<li>We store <strong>entitlement flags</strong> locally and may sync purchase-derived unlock state with your account progress.</li>
 </ul>
-<p>These providers process data on our behalf under their own privacy policies.</p>
+<p>We may receive: product identifier, purchase date, renewal status, expiration date (for subscriptions), and anonymous app store transaction IDs through RevenueCat.</p>
+<h3>2.6 Device, app, and technical data</h3>
+<p>Depending on your platform and settings, we may collect:</p>
+<ul>
+<li><strong>Guest device identifier</strong> — a random ID stored locally (AsyncStorage) to associate guest display-name claims and guest progress before you sign in</li>
+<li><strong>Device type and OS version</strong> — indirectly through Expo/React Native for compatibility</li>
+<li><strong>Push notification permission status</strong> — if you grant permission, we schedule <strong>local</strong> reminders on your device (daily streak nudge, weekly challenge). We do <strong>not</strong> operate a server-side push notification marketing platform at this time.</li>
+<li><strong>App logs and error reports</strong> — our backend providers (Supabase, Expo) may log IP addresses, request timestamps, and error diagnostics for security and reliability. We do not currently integrate a separate third-party crash analytics SDK (such as Sentry or Firebase Analytics) in the app.</li>
+</ul>
+<p>We do <strong>not</strong> collect precise GPS location. We do <strong>not</strong> access your contacts, photos, microphone, or camera for core gameplay.</p>
+<h3>2.7 Support and communications</h3>
+<p>If you email us at <strong>toobajatoi44@gmail.com</strong>, we receive:</p>
+<ul>
+<li>Your email address</li>
+<li>The content of your message and any attachments you choose to send</li>
+<li>Metadata necessary to respond (timestamps, thread history)</li>
+</ul>
+<p>We use this information only to provide support and improve the Service.</p>
+<h3>2.8 UX Flow Audit and exports</h3>
+<p>The <strong>UX Flow Audit</strong> feature generates a structured report from your puzzle solution (metrics, findings, suggested nodes). If you choose <strong>Share PDF</strong>, the report is rendered on-device and shared through your device's native share sheet (email, messaging apps, cloud storage, etc.). <strong>We do not upload audit PDFs to our servers</strong> unless you separately send them to us for support.</p>
 <hr />
-<h2>Data retention</h2>
-<p>We keep account and gameplay data while your account is active. You may request deletion by contacting us at <strong>toobajatoi44@gmail.com</strong>. We may retain minimal records where required by law.</p>
+<h2>3. How we collect information</h2>
+<p>We collect information through:</p>
+<ul>
+<li><strong>Information you provide directly</strong> — account registration, display name, onboarding choices, custom node labels, support emails</li>
+<li><strong>Automatic collection during gameplay</strong> — scores, progress, match results, and sync data when you use signed-in features</li>
+<li><strong>Third-party authentication</strong> — Google Sign-In and Apple Sign-In provide account tokens and limited profile fields</li>
+<li><strong>App stores and RevenueCat</strong> — purchase and subscription status</li>
+<li><strong>Local device storage</strong> — guest progress, notification preferences, cached entitlements</li>
+</ul>
 <hr />
-<h2>Children</h2>
-<p>Junction is not directed at children under 13 (or the minimum age in your country). We do not knowingly collect personal information from children.</p>
+<h2>4. How we use your information</h2>
+<p>We use personal and gameplay information for the following purposes:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Purpose</th><th>Examples</th></tr></thead>
+<tbody>
+<tr><td><strong>Provide the Service</strong></td><td>Create accounts, save progress, run simulations, unlock purchased content</td></tr>
+<tr><td><strong>Multiplayer</strong></td><td>Match you with opponents, record match results, update ratings</td></tr>
+<tr><td><strong>Personalization</strong></td><td>Adjust difficulty based on experience level, remember interests and streaks</td></tr>
+<tr><td><strong>Purchases</strong></td><td>Verify subscriptions, restore purchases, gate premium worlds and features</td></tr>
+<tr><td><strong>Security & fraud prevention</strong></td><td>Enforce display-name uniqueness, detect abuse in online modes, protect accounts</td></tr>
+<tr><td><strong>Support</strong></td><td>Respond to your requests and troubleshoot issues</td></tr>
+<tr><td><strong>Improve the Service</strong></td><td>Understand feature usage patterns in aggregate, fix bugs, balance gameplay</td></tr>
+<tr><td><strong>Legal compliance</strong></td><td>Respond to lawful requests, enforce our Terms of Service</td></tr>
+</tbody>
+</table></div>
+<h3>Legal bases (EEA, UK, and similar jurisdictions)</h3>
+<p>If you are in the European Economic Area, United Kingdom, or another region that requires a legal basis for processing, we rely on:</p>
+<ul>
+<li><strong>Contract</strong> — processing necessary to provide the Service you requested</li>
+<li><strong>Legitimate interests</strong> — securing the Service, preventing abuse, improving features (balanced against your rights)</li>
+<li><strong>Consent</strong> — where required, for example push notification permissions or optional OAuth scopes</li>
+<li><strong>Legal obligation</strong> — where we must retain or disclose data under applicable law</li>
+</ul>
+<p>You may withdraw consent where applicable without affecting the lawfulness of processing before withdrawal.</p>
 <hr />
-<h2>Your rights</h2>
-<p>Depending on your location, you may have rights to access, correct, or delete your data. Contact <strong>toobajatoi44@gmail.com</strong> to make a request.</p>
-<p>To manage or cancel a subscription, use your <strong>Google Play</strong> or <strong>App Store</strong> subscription settings.</p>
+<h2>5. How we share information</h2>
+<p>We do <strong>not</strong> sell your personal information. We do <strong>not</strong> share your email address with other players.</p>
+<p>We may share information in these limited circumstances:</p>
+<h3>5.1 Service providers (processors)</h3>
+<p>We use trusted vendors who process data on our behalf under contractual obligations:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Provider</th><th>Role</th><th>Data involved</th></tr></thead>
+<tbody>
+<tr><td><strong>Supabase</strong></td><td>Auth, database, realtime, edge functions</td><td>Account IDs, email, display name, progress JSON, match data</td></tr>
+<tr><td><strong>RevenueCat</strong></td><td>In-app purchase management</td><td>App user ID, store receipts, entitlement status</td></tr>
+<tr><td><strong>Google</strong></td><td>Sign-In, Play Billing (Android)</td><td>OAuth tokens, purchase data via Play</td></tr>
+<tr><td><strong>Apple</strong></td><td>Sign-In, In-App Purchase (iOS)</td><td>OAuth tokens, purchase data via App Store</td></tr>
+<tr><td><strong>Expo / EAS</strong></td><td>App builds and updates</td><td>May process device/build metadata</td></tr>
+</tbody>
+</table></div>
+<p>Each provider's privacy policy governs their handling of data:</p>
+<ul>
+<li><a href="https://supabase.com/privacy" rel="noopener noreferrer">Supabase Privacy</a></li>
+<li><a href="https://www.revenuecat.com/privacy" rel="noopener noreferrer">RevenueCat Privacy</a></li>
+<li><a href="https://policies.google.com/privacy" rel="noopener noreferrer">Google Privacy Policy</a></li>
+<li><a href="https://www.apple.com/legal/privacy" rel="noopener noreferrer">Apple Privacy Policy</a></li>
+<li><a href="https://expo.dev/privacy" rel="noopener noreferrer">Expo Privacy</a></li>
+</ul>
+<h3>5.2 Other players (limited)</h3>
+<p>In Online Blitz, other players may see your <strong>display name</strong>, <strong>online rating</strong>, <strong>match score</strong>, and <strong>board activity during an active match</strong>. They cannot see your email, age, or full progress history.</p>
+<h3>5.3 Legal and safety</h3>
+<p>We may disclose information if we believe in good faith that disclosure is necessary to:</p>
+<ul>
+<li>Comply with law, regulation, legal process, or government request</li>
+<li>Enforce our Terms of Service</li>
+<li>Protect the rights, property, or safety of Junction, our users, or the public</li>
+<li>Detect or prevent fraud, security issues, or abuse</li>
+</ul>
+<h3>5.4 Business transfers</h3>
+<p>If Junction is involved in a merger, acquisition, or sale of assets, your information may be transferred as part of that transaction. We will notify you via the app or email if ownership or use of your personal information changes materially.</p>
 <hr />
-<h2>Changes</h2>
-<p>We may update this policy. The "Last updated" date will change when we do. Continued use of the app after changes means you accept the updated policy.</p>
+<h2>6. International data transfers</h2>
+<p>Our service providers may process data in the <strong>United States</strong>, <strong>European Union</strong>, and other countries where they operate data centers.</p>
+<p>If you use the Service from outside those regions (including <strong>Pakistan</strong>), your information may be transferred internationally. Where required, we rely on appropriate safeguards such as standard contractual clauses or equivalent mechanisms offered by our providers.</p>
 <hr />
-<h2>Contact</h2>
-<p>Questions about this policy: <strong>toobajatoi44@gmail.com</strong></p>
+<h2>7. Data retention</h2>
+<p>We retain information for as long as necessary to provide the Service and fulfill the purposes described in this policy:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Data type</th><th>Retention period</th></tr></thead>
+<tbody>
+<tr><td><strong>Account & profile</strong></td><td>Until you delete your account or request deletion, plus a short backup window</td></tr>
+<tr><td><strong>Gameplay progress</strong></td><td>While your account is active; guest data until cleared from device or linked to an account</td></tr>
+<tr><td><strong>Match history</strong></td><td>Retained for matchmaking integrity and rating calculation; may be aggregated or anonymized over time</td></tr>
+<tr><td><strong>Live match activity</strong></td><td>For the duration of an active match; updated in real time and not intended as permanent archive</td></tr>
+<tr><td><strong>Purchase records</strong></td><td>As long as required for tax, accounting, and app store reconciliation (often several years per store rules)</td></tr>
+<tr><td><strong>Support emails</strong></td><td>As long as needed to resolve your inquiry and maintain reasonable support records</td></tr>
+</tbody>
+</table></div>
+<p>When you request account deletion, we will delete or anonymize personal data within a <strong>reasonable period</strong> (typically 30 days), except where retention is required by law or legitimate business needs (for example fraud prevention or unresolved disputes).</p>
+<p>To request deletion, email <strong>toobajatoi44@gmail.com</strong> from the address associated with your account.</p>
+<hr />
+<h2>8. Security</h2>
+<p>We implement administrative, technical, and organizational measures designed to protect your information, including:</p>
+<ul>
+<li><strong>Encryption in transit</strong> (HTTPS/TLS) for network communication with Supabase and store APIs</li>
+<li><strong>Row Level Security (RLS)</strong> on Supabase tables so users can only access their own progress where applicable</li>
+<li><strong>Authentication tokens</strong> managed by Supabase Auth</li>
+<li><strong>Least-privilege access</strong> to production systems by the developer</li>
+</ul>
+<p>No method of transmission or storage is 100% secure. You are responsible for keeping your device and account credentials safe.</p>
+<hr />
+<h2>9. Your privacy rights</h2>
+<p>Depending on where you live, you may have rights to:</p>
+<ul>
+<li><strong>Access</strong> — request a copy of personal data we hold about you</li>
+<li><strong>Correction</strong> — update inaccurate display names or profile data (many fields editable in-app)</li>
+<li><strong>Deletion</strong> — request erasure of your account and associated data</li>
+<li><strong>Portability</strong> — receive a machine-readable copy of progress data where feasible</li>
+<li><strong>Object or restrict</strong> — certain processing based on legitimate interests</li>
+<li><strong>Withdraw consent</strong> — for optional features such as notifications</li>
+</ul>
+<h3>How to exercise your rights</h3>
+<p>Email <strong>toobajatoi44@gmail.com</strong> with the subject line "Privacy Request". We may verify your identity before fulfilling requests. We will respond within the timeframe required by applicable law (often 30 days).</p>
+<h3>Subscriptions and store purchases</h3>
+<p>To <strong>cancel a subscription</strong>, use your <strong>Apple App Store</strong> or <strong>Google Play</strong> subscription settings. Refunds are handled by Apple or Google under their policies, not directly by Junction.</p>
+<h3>California residents (CCPA/CPRA)</h3>
+<p>We do not sell personal information. California residents may request access to or deletion of personal information as described above. We will not discriminate against you for exercising privacy rights.</p>
+<h3>EEA / UK residents</h3>
+<p>You may lodge a complaint with your local data protection authority. We encourage you to contact us first so we can address your concern.</p>
+<hr />
+<h2>10. Children's privacy</h2>
+<p>Junction is <strong>not directed to children under 13</strong> (or the minimum digital consent age in your country, which may be higher in some regions, such as 16 in parts of the EU).</p>
+<p>We do not knowingly collect personal information from children under the applicable minimum age. If you believe a child has provided us personal information, contact <strong>toobajatoi44@gmail.com</strong> and we will take steps to delete it.</p>
+<p>The Service includes age-range selection during onboarding for difficulty tuning; this is not intended as verified age authentication.</p>
+<hr />
+<h2>11. Push notifications</h2>
+<p>If you allow notifications on iOS or Android, Junction schedules <strong>local notifications</strong> on your device (for example daily streak reminders). These are generated on-device; we do not use them to collect location or behavioral advertising profiles.</p>
+<p>You can disable notifications anytime in your device <strong>Settings</strong>.</p>
+<hr />
+<h2>12. Guest play and account linking</h2>
+<p>You may play without signing in. Guest data (progress, display name claim, device ID) is stored <strong>locally</strong> on your device.</p>
+<p>When you later sign in with Google, Apple, or email, we may <strong>merge</strong> guest progress into your account if you choose to link sessions. Merged data is governed by this policy as account data.</p>
+<p>If you uninstall the app without signing in, <strong>guest progress may be lost</strong>.</p>
+<hr />
+<h2>13. Third-party content and links</h2>
+<p>The <strong>Learn</strong> section may link to external resources (YouTube, Figma community files, articles). Opening those links leaves the Junction app and is subject to the third party's terms and privacy practices.</p>
+<p>Level scenarios may reference well-known products and brands for <strong>educational purposes</strong>. Junction is not affiliated with or endorsed by those companies unless explicitly stated.</p>
+<hr />
+<h2>14. Changes to this Privacy Policy</h2>
+<p>We may update this Privacy Policy from time to time. When we do, we will revise the <strong>"Last updated"</strong> date at the top. Material changes may be communicated through the app, email, or store listing notes.</p>
+<p>Continued use of the Service after changes become effective constitutes acceptance of the updated policy, unless applicable law requires otherwise.</p>
+<hr />
+<h2>15. Contact us</h2>
+<p>For privacy questions, requests, or complaints:</p>
+<p><strong>Email:</strong> toobajatoi44@gmail.com  </p>
+<p><strong>App:</strong> Junction (<code>com.junction.app</code>)</p>
+<p>We aim to respond to privacy inquiries within <strong>30 days</strong>.</p>
 
     </main>
 
