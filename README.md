@@ -2,7 +2,7 @@
 
 Public privacy policy and terms for App Store / Play Store.
 
-**Live URL:** https://toobajatoi.github.io/junction-legal/
+**Live URL:** (https://junction-legal.vercel.app/index.html)
 
 Regenerate from markdown:
 
